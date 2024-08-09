@@ -1,0 +1,126 @@
+.ai{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 7rem;
+    margin-bottom: 4rem;
+}
+.form{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ai h1{
+    font-weight:bolder;
+    font-size: 1.7rem;
+    color: #F2A93E;
+    margin: 1rem 1rem;
+    font-family: Courier, monospace;
+}
+
+.ai textarea{
+    border: 2px solid #F2A93E;
+    /* margin: 1rem 1rem; */
+    margin-top: -0.5rem;
+    width: 20rem;
+    border-radius: 1rem;
+    outline:#F2A93E;
+    resize:none;
+    
+}
+
+.btn{
+  padding: 0.5rem 0.5rem;
+  padding-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  /* outline: none; */
+  color: #f49507;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 12px;
+  border: 2px solid #F2A93E;
+
+}
+.btn::after {
+    content: "";
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(247, 233, 231);
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+  }
+  /* glow */
+  .btn::before {
+    content: "";
+    background: linear-gradient(
+      45deg,
+      #FF0000, #FF7300, #FFFB00, #48FF00,
+      #00FFD5, #002BFF, #FF00C8, #FF0000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 600%;
+    z-index: -1;
+    width: calc(100% + 4px);
+    height:  calc(100% + 4px);
+    filter: blur(8px);
+    animation: glowing 20s linear infinite;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+    opacity: 0;
+  }
+  
+  @keyframes glowing {
+    0% {background-position: 0 0;}
+    50% {background-position: 400% 0;}
+    100% {background-position: 0 0;}
+  }
+  
+  /* hover */
+  .btn:hover::before {
+    opacity: 1;
+  }
+  
+  .btn:active:after {
+    background: transparent;
+  }
+  
+  .btn:active {
+    color: #000;
+    font-weight: bold;
+  }
+
+  p{
+    align-items: center;
+    overflow-y:scroll;
+    
+  }
+  p::-webkit-scrollbar{
+    display: none;
+  }
+
+.ans p{
+    border: 2px solid tomato;
+    border-radius: 1rem;
+    width: 60vw;
+    align-items: center;
+    margin: 2rem 0rem;
+    background-color: rgb(250, 236, 234);
+    padding: 2rem 2rem;
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.ans p b{
+    color: rgb(245, 135, 115);
+}
+
+

@@ -1,0 +1,29 @@
+.my-orders{
+    
+        display: flex;
+       flex-direction: column;
+       justify-content: space-around;
+       align-items: center;
+       margin: 5.6rem;
+       padding: 3rem 5rem;
+       padding-bottom: 5rem;
+       gap: 1rem;
+      
+       width: 60%;
+      margin-left: 18rem;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, 
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+      rgba(0, 0, 0, 0.12) 0px 4px 6px,
+       rgba(0, 0, 0, 0.17) 0px 12px 13px,
+        rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.my-orders img{
+    width: 15%;
+}
+.my-orders h1{
+    font-weight: 600;
+    font-size: 2rem;
+}
+.my-orders p{
+    font-weight: 500;
+}
