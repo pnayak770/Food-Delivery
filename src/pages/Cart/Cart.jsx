@@ -3,6 +3,7 @@ import './Cart.css'
 import { StoreContext } from '../../Context/StoreContext'
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { FaIndianRupeeSign } from "react-icons/fa6";
 
 const Cart = ({isLoggedIn}) => {
 
@@ -23,9 +24,9 @@ const Cart = ({isLoggedIn}) => {
               <div className="cart-items-title cart-items-item">
                 <img src={item.food_image} alt="" />
                 <p>{item.food_name}</p>
-                <p>${item.food_price}</p>
+                <p><FaIndianRupeeSign/>{item.food_price}</p>
                 <div>{cartItems[item.food_id]}</div>
-                <p>${item.food_price*cartItems[item.food_id]}</p>
+                <p><FaIndianRupeeSign/>{item.food_price*cartItems[item.food_id]}</p>
                 <p className='cart-items-remove-icon' onClick={()=>removeFromCart(item.food_id)}>x</p>
               </div>
               <hr />
@@ -37,11 +38,11 @@ const Cart = ({isLoggedIn}) => {
         <div className="cart-total">
           <h2>Cart Totals</h2>
           <div>
-            <div className="cart-total-details"><p>Subtotal</p><p>${getTotalCartAmount()}</p></div>
+            <div className="cart-total-details"><p>Subtotal</p><p><FaIndianRupeeSign/>{getTotalCartAmount()}</p></div>
             <hr />
-            <div className="cart-total-details"><p>Delivery Fee</p><p>${getTotalCartAmount()===0?0:5}</p></div>
+            <div className="cart-total-details"><p>Delivery Fee</p><p><FaIndianRupeeSign/>{getTotalCartAmount()===0?0:40}</p></div>
             <hr />
-            <div className="cart-total-details"><b>Total</b><b>${getTotalCartAmount()===0?0:getTotalCartAmount()+5}</b></div>
+            <div className="cart-total-details"><b>Total</b><b><FaIndianRupeeSign/>{getTotalCartAmount()===0?0:getTotalCartAmount()+40}</b></div>
           </div>
           <button onClick={()=>{isLoggedIn?navigate('/order'):toast.success("please Sign in!!", {
                 position: "top-center",

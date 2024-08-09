@@ -3,6 +3,7 @@ import './PlaceOrder.css'
 import { StoreContext } from '../../Context/StoreContext'
 import { assets } from '../../assets/assets';
 import { useNavigate } from 'react-router-dom';
+import { FaIndianRupeeSign } from "react-icons/fa6";
 
 const PlaceOrder = () => {
     
@@ -63,11 +64,11 @@ console.log();
                 <div className="cart-total">
                     <h2>Cart Totals</h2>
                     <div>
-                        <div className="cart-total-details"><p>Subtotal</p><p>${getTotalCartAmount()}</p></div>
+                        <div className="cart-total-details"><p>Subtotal</p><p><FaIndianRupeeSign/>{getTotalCartAmount()}</p></div>
                         <hr />
-                        <div className="cart-total-details"><p>Delivery Fee</p><p>${getTotalCartAmount() === 0 ? 0 : 5}</p></div>
+                        <div className="cart-total-details"><p>Delivery Fee</p><p><FaIndianRupeeSign/>{getTotalCartAmount() === 0 ? 0 : 50}</p></div>
                         <hr />
-                        <div className="cart-total-details"><b>Total</b><b>${getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 5}</b></div>
+                        <div className="cart-total-details"><b>Total</b><b><FaIndianRupeeSign/>{getTotalCartAmount() === 0 ? 0 : getTotalCartAmount() + 50}</b></div>
                     </div>
                 </div>
                 <div className="payment-options">
